@@ -1,0 +1,439 @@
+local ScreenGui = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local TextBox = Instance.new("TextBox")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local Add = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local Delete = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local Clr = Instance.new("TextBox")
+local Frame = Instance.new("Frame")
+local ImageButton = Instance.new("ImageButton")
+local TextLabel = Instance.new("TextLabel")
+local ImageButton2 = Instance.new("ImageButton")
+local TextLabel_2 = Instance.new("TextLabel")
+local TextLabel_3 = Instance.new("TextLabel")
+local ImageButton_2 = Instance.new("ImageButton")
+local Frame_2 = Instance.new("Frame")
+local Bind = Instance.new("TextBox")
+local TextBox_2 = Instance.new("TextBox")
+local ImageButton_3 = Instance.new("ImageButton")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.Enabled = true
+ScreenGui.ResetOnSpawn = false
+
+Main.Name = "Main"
+Main.Parent = ScreenGui
+Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Main.Position = UDim2.new(0.789090395, 0, -0.000307881768, 0)
+Main.Size = UDim2.new(0.210227266, 0, 0.64741385, 0)
+
+TextBox.Parent = Main
+TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.Position = UDim2.new(0, 0, 0.0616399162, 0)
+TextBox.Size = UDim2.new(1, 0, 0.168137819, 0)
+TextBox.ZIndex = 2
+TextBox.Font = Enum.Font.SourceSans
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.TextScaled = true
+TextBox.TextSize = 14.000
+TextBox.TextWrapped = true
+
+ScrollingFrame.Parent = Main
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollingFrame.Position = UDim2.new(0, 0, 0.233022615, 0)
+ScrollingFrame.Size = UDim2.new(1, 0, 0.702000022, 0)
+ScrollingFrame.ZIndex = 2
+
+Add.Name = "Add"
+Add.Parent = Main
+Add.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+Add.BorderSizePixel = 0
+Add.Position = UDim2.new(0.594755411, 0, 0.947000027, 0)
+Add.Size = UDim2.new(0.300000012, 0, 0.0500000007, 0)
+Add.ZIndex = 2
+Add.Font = Enum.Font.SourceSans
+Add.Text = "+"
+Add.TextColor3 = Color3.fromRGB(0, 0, 0)
+Add.TextScaled = true
+Add.TextSize = 14.000
+Add.TextWrapped = true
+
+UICorner.Parent = Add
+
+Delete.Name = "Delete"
+Delete.Parent = Main
+Delete.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Delete.BorderSizePixel = 0
+Delete.Position = UDim2.new(0.10678409, 0, 0.947000027, 0)
+Delete.Size = UDim2.new(0.300000012, 0, 0.0500000007, 0)
+Delete.ZIndex = 2
+Delete.Font = Enum.Font.SourceSans
+Delete.Text = "-"
+Delete.TextColor3 = Color3.fromRGB(0, 0, 0)
+Delete.TextScaled = true
+Delete.TextSize = 14.000
+Delete.TextWrapped = true
+
+UICorner_2.Parent = Delete
+
+Clr.Name = "Clr"
+Clr.Parent = Main
+Clr.BackgroundColor3 = Color3.fromRGB(255, 255, 0)
+Clr.Position = UDim2.new(0.455640733, 0, 0.946040154, 0)
+Clr.Size = UDim2.new(0.0842825696, 0, 0.0488872565, 0)
+Clr.ZIndex = 4
+Clr.Font = Enum.Font.SourceSans
+Clr.Text = ""
+Clr.TextColor3 = Color3.fromRGB(0, 0, 0)
+Clr.TextScaled = true
+Clr.TextSize = 14.000
+Clr.TextWrapped = true
+
+Frame.Parent = Main
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.Position = UDim2.new(0, 0, 0.999302447, 0)
+Frame.Size = UDim2.new(1, 0, 0.0799999982, 0)
+
+ImageButton.Parent = Frame
+ImageButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+ImageButton.Position = UDim2.new(0.0308371261, 0, 0.124999963, 0)
+ImageButton.Size = UDim2.new(0.424803913, 0, 0.800000012, 0)
+
+TextLabel.Parent = ImageButton
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Size = UDim2.new(1, 0, 1, 0)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Recieving"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextSize = 14.000
+
+ImageButton2.Name = "ImageButton2"
+ImageButton2.Parent = Frame
+ImageButton2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+ImageButton2.Position = UDim2.new(0.539051771, 0, 0.124999963, 0)
+ImageButton2.Size = UDim2.new(0.424803913, 0, 0.800000012, 0)
+
+TextLabel_2.Parent = ImageButton2
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Size = UDim2.new(1, 0, 1, 0)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "Sending"
+TextLabel_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.TextSize = 14.000
+
+TextLabel_3.Parent = Main
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.Size = UDim2.new(1, 0, 0.0549999997, 0)
+TextLabel_3.Font = Enum.Font.SourceSans
+TextLabel_3.Text = "SafeChat"
+TextLabel_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.TextSize = 14.000
+
+ImageButton_2.Parent = Main
+ImageButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageButton_2.BackgroundTransparency = 1.000
+ImageButton_2.Position = UDim2.new(0.851054013, 0, 0.00207260111, 0)
+ImageButton_2.Size = UDim2.new(0, 20, 0, 20)
+ImageButton_2.ZIndex = 5
+ImageButton_2.Image = "rbxassetid://7340497438"
+ImageButton_2.ImageColor3 = Color3.fromRGB(0, 0, 0)
+
+Frame_2.Parent = ScreenGui
+Frame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame_2.Size = UDim2.new(0.930000007, 0, 0.0500000007, 0)
+Frame_2.Visible = false
+Frame_2.ZIndex = 3
+
+Bind.Name = "Bind"
+Bind.Parent = Frame_2
+Bind.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Bind.Size = UDim2.new(0.150000006, 0, 1, 0)
+Bind.ZIndex = 4
+Bind.Font = Enum.Font.SourceSans
+Bind.Text = ""
+Bind.TextColor3 = Color3.fromRGB(0, 0, 0)
+Bind.TextScaled = true
+Bind.TextSize = 14.000
+Bind.TextWrapped = true
+
+TextBox_2.Parent = Frame_2
+TextBox_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBox_2.Position = UDim2.new(0.150000006, 0, 0, 0)
+TextBox_2.Size = UDim2.new(0.850000024, 0, 1, 0)
+TextBox_2.ZIndex = 4
+TextBox_2.Font = Enum.Font.SourceSans
+TextBox_2.Text = ""
+TextBox_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextBox_2.TextScaled = true
+TextBox_2.TextSize = 14.000
+TextBox_2.TextWrapped = true
+
+ImageButton_3.Parent = ScreenGui
+ImageButton_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageButton_3.BackgroundTransparency = 1.000
+ImageButton_3.Position = UDim2.new(0.972789168, 0, 0.962432981, 0)
+ImageButton_3.Size = UDim2.new(0, 20, 0, 20)
+ImageButton_3.Visible = false
+ImageButton_3.Image = "rbxassetid://7340329020"
+
+-- Scripts:
+
+local function SFUNZ_fake_script() -- TextBox.LocalScript 
+	local script = Instance.new('LocalScript', TextBox)
+
+	local UIS = game:GetService('UserInputService')
+	local frame = script.Parent.Parent
+	local dragToggle = nil
+	local dragSpeed = 0
+	local dragStart = nil
+	local startPos = nil
+	
+	_G.focused = false
+	_G.typing = false
+	
+	local scrollframe = script.Parent.Parent.ScrollingFrame
+	
+	local addbind = script.Parent.Parent.Add
+	local removebind = script.Parent.Parent.Delete
+	
+	local leech = script.Parent.Parent.Frame
+	local toggle = leech.ImageButton
+	local toggle2 = leech.ImageButton2
+	local textBox = script.Parent
+	local clr = script.Parent.Parent.Clr
+	local letters = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}
+	local binds = {
+		A = "",
+		B = "",
+		C = "",
+		D = "",
+		E = "",
+		F = "",
+		G = "",
+		H = "",
+		I = "",
+		J = "",
+		K = "",
+		L = "",
+		M = "",
+		N = "",
+		O = "",
+		P = "",
+		Q = "",
+		R = "",
+		S = "",
+		T = "",
+		U = "",
+		V = "",
+		W = "",
+		X = "",
+		Y = "",
+		Z = ""
+	}
+	--DRAG================================================================
+	local function updateInput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+	end
+	
+	frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+			dragToggle = true
+			dragStart = input.Position
+			startPos = frame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			if dragToggle then
+				updateInput(input)
+			end
+		end
+	end)
+	
+	--SAFECHAT======================================================================
+	textBox.Focused:Connect(function()
+		wait()
+		textBox.Text = ""
+		_G.focused = true
+	end)
+	
+	textBox.FocusLost:Connect(function()
+		_G.focused = false
+		wait()
+		textBox.Text = ""
+	end)
+	
+	addbind.MouseButton1Click:Connect(function()
+		local count = scrollframe:GetChildren()
+		local new = script.Parent.Parent.Parent.Frame:Clone()
+		new.Parent = scrollframe
+		new.Name = tostring("Frame"..#count)
+		new.Position = UDim2.new(0,0,#count*0.05,0)
+		new.Visible = true
+		new.Bind.Changed:Connect(function(prop)
+			local binder = ""
+			if prop == "Text" then
+				local typed = string.upper(new.Bind.Text:sub(#new.Bind.Text, #new.Bind.Text))
+				for i, v in pairs(letters) do
+					if typed == v then
+						binder = typed
+					end
+				end
+				new.Bind.Text = binder
+				if binder ~= "" then
+					binds[binder] = ""
+				else
+					new.TextBox.Text = ""
+				end
+			end
+		end)
+		new.TextBox.Focused:Connect(function() wait(); _G.focused = true end)
+		new.TextBox.FocusLost:Connect(function()
+			_G.focused = false
+			if new.Bind.Text == "" and new.TextBox.Text ~= "" then
+				new.TextBox.Text = ""
+			elseif new.Bind.Text ~= "" and new.TextBox.Text ~= "" then
+				binds[new.Bind.Text] = new.TextBox.Text
+			elseif new.TextBox.Text == "" and new.Bind.Text ~= "" then
+				binds[new.Bind.Text] = ""
+			end
+		end)
+	end)
+	
+	removebind.MouseButton1Click:Connect(function()
+		local count = scrollframe:GetChildren()
+		if #count-1 >= 0 then
+			binds[scrollframe[tostring("Frame"..#count-1)].Bind.Text] = ""
+			scrollframe[tostring("Frame"..#count-1)]:Destroy()
+		end
+	end)
+	
+	clr.Focused:Connect(function() wait(); _G.focused = true end)
+	
+	clr.FocusLost:Connect(function()
+		_G.focused = false
+		if clr.Text == " " then
+			binds = {
+				A = "",
+				B = "",
+				C = "",
+				D = "",
+				E = "",
+				F = "",
+				G = "",
+				H = "",
+				I = "",
+				J = "",
+				K = "",
+				L = "",
+				M = "",
+				N = "",
+				O = "",
+				P = "",
+				Q = "",
+				R = "",
+				S = "",
+				T = "",
+				U = "",
+				V = "",
+				W = "",
+				X = "",
+				Y = "",
+				Z = ""
+			}
+		else
+			for i, v in pairs(letters) do
+				if clr.Text == v or clr.Text == string.lower(v) then binds[string.upper(v)] = "" end
+			end
+		end
+		wait()
+		clr.Text = ""
+	end)
+	
+	UIS.InputBegan:Connect(function(input)
+		if input.KeyCode == Enum.KeyCode.BackSlash then
+			textBox:CaptureFocus()
+		elseif input.KeyCode == Enum.KeyCode.Return and textBox.Text ~= "" then
+			local saystring = textBox.Text
+			if toggle2.BackgroundColor3 == Color3.fromRGB(0,255,0) then
+			    saystring = tostring("lIllIIl "..saystring)
+			end
+			game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(saystring, "All")
+		else
+			for i, letter in pairs(letters) do
+				if input.KeyCode == Enum.KeyCode[letter] and binds[letter] ~= "" and _G.focused == false then
+						local saystring = binds[letter]
+						if toggle2.BackgroundColor3 == Color3.fromRGB(0,255,0) then
+						    saystring = tostring("lIllIIl "..saystring)
+						end
+					game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(saystring, "All")
+				end
+			end
+		end
+	end)
+	
+	
+	
+	--LEECH=================================================================================
+	toggle.MouseButton1Click:Connect(function()
+		if toggle.BackgroundColor3 == Color3.fromRGB(255,0,0) then
+			toggle.BackgroundColor3 = Color3.fromRGB(0,255,0)
+			--TOGGLING ON
+		elseif toggle.BackgroundColor3 == Color3.fromRGB(0,255,0) then
+			toggle.BackgroundColor3 = Color3.fromRGB(255,0,0)
+			--TOGGLING OFF
+		end
+	end)
+	
+	toggle2.MouseButton1Click:Connect(function()
+		if toggle2.BackgroundColor3 == Color3.fromRGB(255,0,0) then
+			toggle2.BackgroundColor3 = Color3.fromRGB(0,255,0)
+			--TOGGLING ON
+		elseif toggle2.BackgroundColor3 == Color3.fromRGB(0,255,0) then
+			toggle2.BackgroundColor3 = Color3.fromRGB(255,0,0)
+			--TOGGLING OFF
+		end
+	end)
+	
+	game:GetService("CoreGui").BubbleChat.ChildAdded:Connect(function(chat)
+		if chat.BubbleChatList:FindFirstChildOfClass("Frame").Frame.Text.Text:match("lIllIIl") and toggle.BackgroundColor3 == Color3.fromRGB(0,255,0) then
+			local newstring = chat.BubbleChatList:FindFirstChildOfClass("Frame").Frame.Text.Text:sub(9, #chat.BubbleChatList:FindFirstChildOfClass("Frame").Frame.Text.Text)
+			game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(newstring, "All")
+		end
+		chat.BubbleChatList.ChildAdded:Connect(function(new)
+			if new:IsA("Frame") and new.Frame.Text.Text:match("lIllIIl") and toggle.BackgroundColor3 == Color3.fromRGB(0,255,0) then
+				local newstring = new.Frame.Text.Text:sub(9, #new.Frame.Text.Text)
+				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(newstring, "All")
+			end
+		end)
+	end)
+	
+	--UI CONTROLS===================================================================
+	frame.ImageButton.MouseButton1Click:Connect(function()
+		frame.Visible = false
+		frame.Parent.ImageButton.Visible = true
+	end)
+	
+	frame.Parent.ImageButton.MouseButton1Click:Connect(function()
+		frame.Visible = true
+		frame.Parent.ImageButton.Visible = false
+	end)
+end
+coroutine.wrap(SFUNZ_fake_script)()
