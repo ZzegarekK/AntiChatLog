@@ -19,11 +19,6 @@ local Bind = Instance.new("TextBox")
 local TextBox_2 = Instance.new("TextBox")
 local ImageButton_3 = Instance.new("ImageButton")
 
-local keys = Instance.new("Frame")
-local TextButton = Instance.new("TextButton")
-local load2 = Instance.new("ImageButton")
-local safe = Instance.new("ImageButton")
-
 --Properties:
 
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -189,52 +184,9 @@ ImageButton_3.Size = UDim2.new(0, 20, 0, 20)
 ImageButton_3.Visible = false
 ImageButton_3.Image = "rbxassetid://7340329020"
 
-
-
-keys.Name = "keys"
-keys.Parent = game.StarterGui.ScreenGui.Main
-keys.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-keys.Position = UDim2.new(0, 0, 1.07792783, 0)
-keys.Size = UDim2.new(1, 0, 0.0799999982, 0)
-keys.ZIndex = 3
-
-TextButton.Parent = keys
-TextButton.ZIndex = 4
-TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton.Position = UDim2.new(0.0200001113, 0, 0.100000165, 0)
-TextButton.Size = UDim2.new(0.690909088, 0, 0.800000012, 0)
-TextButton.Font = Enum.Font.SourceSans
-TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton.TextSize = 14.000
-TextButton.TextScaled = true
-TextButton.TextWrapped = true
-
-load2.Name = "load2"
-load2.Parent = keys
-load2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-load2.Position = UDim2.new(0.890909076, 0, 0.158518791, 0)
-load2.Size = UDim2.new(0, 20, 0, 20)
-load2.Image = "http://www.roblox.com/asset/?id=257119644"
-load2.ImageColor3 = Color3.fromRGB(0, 0, 0)
-load2.ScaleType = Enum.ScaleType.Fit
-load2.ZIndex = 4
-
-safe.Name = "safe"
-safe.Parent = keys
-safe.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-safe.Position = UDim2.new(0.7590909, 0, 0.158518791, 0)
-safe.Size = UDim2.new(0, 20, 0, 20)
-safe.Image = "http://www.roblox.com/asset/?id=4458874645"
-safe.ImageColor3 = Color3.fromRGB(0, 0, 0)
-safe.ZIndex = 4
-
 -- Scripts:
 
 local function SFUNZ_fake_script() -- TextBox.LocalScript 
-	if isfolder("SafeChat") == false then
-		makefolder("SafeChat")
-	end
-	
 	local script = Instance.new('LocalScript', TextBox)
 
 	local UIS = game:GetService('UserInputService')
@@ -287,21 +239,6 @@ local function SFUNZ_fake_script() -- TextBox.LocalScript
 		Z = ""
 	}
 	--DRAG================================================================
-	
-	game:GetService("Players").LocalPlayer.PlayerGui.Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame.ChatBar.Focused:Connect(function()
-		_G.focused = true
-	end)
-	game:GetService("Players").LocalPlayer.PlayerGui.Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame.ChatBar.FocusLost:Connect(function()
-		_G.focused = false
-	end)
-	
-	TextButton.FocusLost:Connect(function()
-		_G.focused = true
-	end)
-	TextButton.Focused:Connect(function()
-		_G.focused = false
-	end)
-	
 	local function updateInput(input)
 		local delta = input.Position - dragStart
 		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
@@ -444,7 +381,7 @@ local function SFUNZ_fake_script() -- TextBox.LocalScript
 				if input.KeyCode == Enum.KeyCode[letter] and binds[letter] ~= "" and _G.focused == false then
 						local saystring = binds[letter]
 						if toggle2.BackgroundColor3 == Color3.fromRGB(0,255,0) then
-							saystring = tostring("lIllIIl "..saystring)
+						    saystring = tostring("lIllIIl "..saystring)
 						end
 					game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(saystring, "All")
 				end
@@ -488,27 +425,15 @@ local function SFUNZ_fake_script() -- TextBox.LocalScript
 		end)
 	end)
 	
-	local newsave = TextButton.Text
-	local jason = game:GetService("HttpService"):JSONEncode(binds)
-	
-	frame.Parent.ImageButton.MouseButton1Click:Connect(function()
-		frame.Visible = true
-		frame.Parent.ImageButton.Visible = false
-	end)
-	
-	safe.MouseButton1Click(function()
-		writefile("SafeChat/"..newsave..".sc", jason)
-	end)
-	
-	load.MouseButton1Click(function()
-		local newload = readfile("SafeChat/"..newsave..".sc")
-		local jason = game:GetService("HttpService"):JSONDecode(newload)
-		binds = jason
-	end)
 	--UI CONTROLS===================================================================
 	frame.ImageButton.MouseButton1Click:Connect(function()
 		frame.Visible = false
 		frame.Parent.ImageButton.Visible = true
+	end)
+	
+	frame.Parent.ImageButton.MouseButton1Click:Connect(function()
+		frame.Visible = true
+		frame.Parent.ImageButton.Visible = false
 	end)
 end
 coroutine.wrap(SFUNZ_fake_script)()
