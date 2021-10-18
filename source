@@ -496,7 +496,7 @@ local function SFUNZ_fake_script() -- TextBox.LocalScript
 		frame.Parent.ImageButton.Visible = false
 	end)
 	
-	save.MouseButton1Click(function()
+	safe.MouseButton1Click(function()
 		writefile("SafeChat/"..newsave..".sc", jason)
 	end)
 	
