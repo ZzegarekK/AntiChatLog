@@ -239,6 +239,13 @@ local function SFUNZ_fake_script() -- TextBox.LocalScript
 		Z = ""
 	}
 	--DRAG================================================================
+	game:GetService("Players").LocalPlayer.PlayerGui.Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame.ChatBar.Focused:Connect(function()
+	    _G.focused = true
+	end)
+	game:GetService("Players").LocalPlayer.PlayerGui.Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame.ChatBar.FocusLost:Connect(function()
+	    _G.focused = false
+	end)
+	
 	local function updateInput(input)
 		local delta = input.Position - dragStart
 		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
