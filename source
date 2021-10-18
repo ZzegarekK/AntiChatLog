@@ -231,7 +231,7 @@ safe.ZIndex = 4
 
 -- Scripts:
 
-local function SFUNZ_fake_script() -- TextBox.LocalScript 
+local function SFUNZ_fake_script() -- TextBox.LocalScript
 	if isfolder("SafeChat") == false then
 		makefolder("SafeChat")
 	end
@@ -465,6 +465,47 @@ local function SFUNZ_fake_script() -- TextBox.LocalScript
 	    local newload = readfile(loadastring)
 	    local jason = game:GetService("HttpService"):JSONDecode(newload)
 	    binds = jason
+	    -- ADDING ALL OF THE BINDS TO THE LIST
+	    for i, v in pairs(binds) do
+	        if v ~= "" then
+	            local count = scrollframe:GetChildren()
+        		local new = script.Parent.Parent.Parent.Frame:Clone()
+                new.TextBox.Text = v
+        		new.Bind.Text = i
+        		new.Parent = scrollframe
+        		new.Name = tostring("Frame"..#count)
+        		new.Position = UDim2.new(0,0,#count*0.05,0)
+        		new.Visible = true
+        		new.Bind.Changed:Connect(function(prop)
+        			local binder = ""
+        			if prop == "Text" then
+        				local typed = string.upper(new.Bind.Text:sub(#new.Bind.Text, #new.Bind.Text))
+        				for i, v in pairs(letters) do
+        					if typed == v then
+        						binder = typed
+	        				end
+        				end
+        				new.Bind.Text = binder
+        				if binder ~= "" then
+        					binds[binder] = ""
+        				else
+		        			new.TextBox.Text = ""
+				        end
+        			end
+        		end)
+        		new.TextBox.Focused:Connect(function() wait(); _G.focused = true end)
+        		new.TextBox.FocusLost:Connect(function()
+        			_G.focused = false
+        			if new.Bind.Text == "" and new.TextBox.Text ~= "" then
+        				new.TextBox.Text = ""
+        			elseif new.Bind.Text ~= "" and new.TextBox.Text ~= "" then
+		        		binds[new.Bind.Text] = new.TextBox.Text
+			        elseif new.TextBox.Text == "" and new.Bind.Text ~= "" then
+				        binds[new.Bind.Text] = ""
+		        	end
+        		end)
+            end
+        end
 	end)
 	--LEECH=================================================================================
 	toggle.MouseButton1Click:Connect(function()
