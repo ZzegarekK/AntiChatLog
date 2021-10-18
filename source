@@ -20,7 +20,7 @@ local TextBox_2 = Instance.new("TextBox")
 local ImageButton_3 = Instance.new("ImageButton")
 
 local keys = Instance.new("Frame")
-local TextButton = Instance.new("TextButton")
+local TextButton = Instance.new("TextBox")
 local load2 = Instance.new("ImageButton")
 local safe = Instance.new("ImageButton")
 
@@ -192,7 +192,7 @@ ImageButton_3.Image = "rbxassetid://7340329020"
 
 
 keys.Name = "keys"
-keys.Parent = game.StarterGui.ScreenGui.Main
+keys.Parent = Main
 keys.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 keys.Position = UDim2.new(0, 0, 1.07792783, 0)
 keys.Size = UDim2.new(1, 0, 0.0799999982, 0)
@@ -208,6 +208,7 @@ TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.TextSize = 14.000
 TextButton.TextScaled = true
 TextButton.TextWrapped = true
+TextButton.Text = "apic"
 
 load2.Name = "load2"
 load2.Parent = keys
@@ -241,14 +242,13 @@ local function SFUNZ_fake_script() -- TextBox.LocalScript
 	game:GetService("Players").LocalPlayer.PlayerGui.Chat.Frame.ChatBarParentFrame.Frame.BoxFrame.Frame.ChatBar.FocusLost:Connect(function()
 		_G.focused = false
 	end)
-
-	TextButton.FocusLost:Connect(function()
-		_G.focused = true
-	end)
+    TextButton.FocusLost:Connect(function()
+        _G.focused = true
+    end)
 	TextButton.Focused:Connect(function()
 		_G.focused = false
 	end)
-	
+
 	local script = Instance.new('LocalScript', TextBox)
 
 	local UIS = game:GetService('UserInputService')
@@ -450,25 +450,22 @@ local function SFUNZ_fake_script() -- TextBox.LocalScript
 			end
 		end
 	end)
-	
-	local newsave = TextButton.Text
-	local jason = game:GetService("HttpService"):JSONEncode(binds)
 
 	frame.Parent.ImageButton.MouseButton1Click:Connect(function()
 		frame.Visible = true
 		frame.Parent.ImageButton.Visible = false
 	end)
-
-	safe.MouseButton1Click(function()
-		writefile("SafeChat/"..newsave..".sc", jason)
+	safe.MouseButton1Click:Connect(function()
+	    local jason = game:GetService("HttpService"):JSONEncode(binds)
+	    local savestring = tostring("SafeChat/"..TextButton.Text..".sc")
+		writefile(savestring, jason)
 	end)
-
-	load.MouseButton1Click(function()
-		local newload = readfile("SafeChat/"..newsave..".sc")
-		local jason = game:GetService("HttpService"):JSONDecode(newload)
-		binds = jason
+	load2.MouseButton1Click:Connect(function()
+	    local loadastring = tostring("SafeChat/"..TextButton.Text..".sc")
+	    local newload = readfile(loadastring)
+	    local jason = game:GetService("HttpService"):JSONDecode(newload)
+	    binds = jason
 	end)
-	
 	--LEECH=================================================================================
 	toggle.MouseButton1Click:Connect(function()
 		if toggle.BackgroundColor3 == Color3.fromRGB(255,0,0) then
