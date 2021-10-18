@@ -21,7 +21,7 @@ local ImageButton_3 = Instance.new("ImageButton")
 
 local keys = Instance.new("Frame")
 local TextButton = Instance.new("TextButton")
-local load = Instance.new("ImageButton")
+local load2 = Instance.new("ImageButton")
 local safe = Instance.new("ImageButton")
 
 --Properties:
@@ -209,15 +209,15 @@ TextButton.TextSize = 14.000
 TextButton.TextScaled = true
 TextButton.TextWrapped = true
 
-load.Name = "load"
-load.Parent = keys
-load.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-load.Position = UDim2.new(0.890909076, 0, 0.158518791, 0)
-load.Size = UDim2.new(0, 20, 0, 20)
-load.Image = "http://www.roblox.com/asset/?id=257119644"
-load.ImageColor3 = Color3.fromRGB(0, 0, 0)
-load.ScaleType = Enum.ScaleType.Fit
-load.ZIndex = 4
+load2.Name = "load2"
+load2.Parent = keys
+load2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+load2.Position = UDim2.new(0.890909076, 0, 0.158518791, 0)
+load2.Size = UDim2.new(0, 20, 0, 20)
+load2.Image = "http://www.roblox.com/asset/?id=257119644"
+load2.ImageColor3 = Color3.fromRGB(0, 0, 0)
+load2.ScaleType = Enum.ScaleType.Fit
+load2.ZIndex = 4
 
 safe.Name = "safe"
 safe.Parent = keys
